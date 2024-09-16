@@ -49,7 +49,8 @@ func (s *CertificatesService) Validate(body *CertificateCreate) error {
 	return err
 }
 
-// Get retrieves certificate details for a specified certificate
+// https://developer.godaddy.com/doc/endpoint/certificates#/v2/getCustomerCertificatesByCustomerId
+// This method can be used to retrieve a list of certificates for a specified customer.
 func (s *CertificatesService) ListByCustomer(customerId string, limit int,
 	offset int) (*ListCertificates, error) {
 	res := new(ListCertificates)
