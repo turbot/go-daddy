@@ -6,8 +6,26 @@
 package daddy
 
 type ListCertificates struct {
-	Certificates []Certificate
+	Certificates []CertificateListResponse
 	Pagination   Pagination
+}
+
+// https://developer.godaddy.com/doc/endpoint/certificates#/v2/getCustomerCertificatesByCustomerId
+type CertificateListResponse struct {
+	CertificateID           string
+	CommonName              string
+	Period                  int
+	Type                    string
+	Status                  string
+	CreatedAt               string
+	CompletedAt             string
+	ValidEndAt              string
+	ValidStartAt            string
+	RevokedAt               string
+	RenewalAvailable        bool
+	SerialNumber            string
+	SlotSize                string
+	SubjectAlternativeNames []string
 }
 
 type Certificate struct {
